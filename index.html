@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projeto Netflix</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Roger Pereira dos Santos">
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+<body>
+  <header>
+    <div class="center">
+      <div class="header-left">
+        <a href=""><img src="images/logo_netflix.png" /></a>
+        <div class="menu-header">
+            <ul>
+              <li><a href="">Início</a></li>
+              <li><a href="">Série</a></li>
+              <li><a href="">Filmes</a></li>
+              <li><a href="">Bombando</a></li>
+              <li><a href="">Minha Lista</a></li>
+            </ul>
+        </div> <!-- menu-header -->
+      </div> <!-- header-left -->
+
+      <div class="header-right">
+        <div class="search">
+          <i class="bi bi-search"></i>
+        </div> <!--search-->
+        <a href=""><b>INFANTIL</b></a>
+        <i class="bi bi-gift"></i>
+        <div class="notifications">
+          <div class="circle-notifications">
+            <span>10</span>
+          </div>
+          <i class="bi bi-bell"></i>
+        </div>
+      </div> <!-- header-right -->
+      <div class="clear"></div>
+    </div> <!-- center -->
+  </header>
+
+  <section class="destaque">
+
+    <video autoplay muted loop id="video-destaque">
+      <source src="images/suits.mp4" type="video/mp4">
+      Seu navegador não suporta videos em HTML4.
+    </video>
+
+    <div class="overlay"></div>
+    <div class="texto-destaque">
+      <h2>SUITS</h2>
+      <h3>Assista agora todas às 9 Temporadas</h3>
+      <p>Harvey é promovido e precisa recrutar um formando da faculdade de Harvard. </p>
+      <p>Ele escolhe Mike Ross, mas há um problema: Mike não tem diploma.</p>
+      <br/>
+      <a href=""><i class="bi bi-play-fill"></i> Assistir</a>
+      <a href=""><i class="bi bi-plus"></i> Minha lista</a>
+      <a href=""><i class="bi bi-info-circle"></i> Mais Informações</a>
+    </div>
+    <div class="center">
+
+    </div> <!--center-->
+  </section><!--destaque-->
+
+  <section class="vitrine">
+    <div class="vitrine-flex">
+      <div class="vitrine-single-banner">
+        <div style="background-image: url('images/dark.png');" class="vitrine-wraper"></div>
+      </div>
+
+      <div class="vitrine-single-banner">
+        <div style="background-image: url('images/greys.jpg');" class="vitrine-wraper"></div>
+      </div>
+      
+      <div class="vitrine-single-banner">
+        <div style="background-image: url('images/peaky.jpg');" class="vitrine-wraper"></div>
+      </div>
+      <div class="vitrine-single-banner">
+        <div style="background-image: url('images/vis.jpg');" class="vitrine-wraper"></div>
+      </div>
+      <div class="vitrine-single-banner">
+        <div style="background-image: url('images/kai.jpg');" class="vitrine-wraper"></div>
+      </div>
+      <div class="vitrine-single-banner">
+        <div style="background-image: url('images/arrow.jpg');" class="vitrine-wraper"></div>
+      </div>
+    </div> <!-- vitrine-flex-->
+  </section> <!--vitrine-->
+
+  <script src="js/jquery.js"></script>
+  <script src="js/slick.min.js"></script>
+
+  <script>
+    $('.vitrine-flex').slick({
+      dots: false,
+      arrows: false,
+      infinite: false,
+      centerMode: false,
+      speed: 1000,
+      slidesToShow: 6, 
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHouver: false,
+           responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 3
+            } 
+        }]
+    });
+
+    $('.vitrine-wraper').hover(function(){
+			$(this).css('z-index','1000');
+		})
+
+		$('.vitrine-wraper').mouseout(function(){
+			$(this).css('z-index','0');
+		})
+  </script>
+
+</body>
+</html>
